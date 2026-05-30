@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemynd Brand System 2026 • Official Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap');
+    
+    :root {
+      --navy: #0F172A;
+      --navy-deep: #020617;
+      --gold: #C9A227;
+      --cream: #FDF8F0;
+      --charcoal: #1E2937;
+    }
+    
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .heading { font-family: 'Playfair Display', Georgia, serif; }
+    
+    .brand-navy { color: #0F172A; }
+    .brand-gold { color: #C9A227; }
+    .bg-brand-navy { background-color: #0F172A; }
+    .bg-brand-gold { background-color: #C9A227; }
+    .bg-brand-cream { background-color: #FDF8F0; }
+    
+    .section-title { font-size: 1.1rem; letter-spacing: 2px; font-weight: 600; color: #C9A227; }
+    
+    .swatch { width: 100%; height: 120px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .swatch-label { font-size: 0.75rem; font-weight: 600; }
+    
+    .guide-card { transition: all 0.2s ease; }
+    .guide-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05); }
+    
+    .nav-active { border-bottom: 3px solid #C9A227; font-weight: 700; color: #0F172A; }
+    
+    .prose { max-width: 70ch; }
+    
+    .example-box {
+      background: white;
+      border: 1px solid #E2D9C8;
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-[#FDF8F0] text-[#0F172A]">
+  
+  <!-- Header -->
+  <div class="bg-[#0F172A] text-[#FDF8F0] py-4 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto px-8 flex items-center justify-between">
+      <div class="flex items-center gap-x-4">
+        <div class="flex items-center gap-x-3">
+          <div class="w-9 h-9 bg-[#C9A227] rounded-xl flex items-center justify-center">
+            <span class="text-[#0F172A] font-bold text-2xl tracking-[-1.5px]">G</span>
+          </div>
+          <div>
+            <div class="font-semibold text-xl tracking-tight">Gemynd</div>
+            <div class="text-[10px] text-[#94A3B8] -mt-1">BRAND SYSTEM 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-x-8 text-sm">
+        <a href="#colors" class="hover:text-[#C9A227] transition-colors">Colors</a>
+        <a href="#typography" class="hover:text-[#C9A227] transition-colors">Typography</a>
+        <a href="#voice" class="hover:text-[#C9A227] transition-colors">Voice &amp; Tone</a>
+        <a href="#logo" class="hover:text-[#C9A227] transition-colors">Logo</a>
+        <a href="#usage" class="hover:text-[#C9A227] transition-colors">Usage</a>
+        <div class="h-3 w-px bg-white/20"></div>
+        <div class="text-xs text-[#64748B]">v1.0 • May 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="bg-[#0F172A] text-[#FDF8F0] pt-16 pb-20">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-x-2 text-xs tracking-[2px] font-semibold text-[#C9A227] mb-4">OFFICIAL BRAND SYSTEM</div>
+        <h1 class="text-6xl leading-none tracking-tighter font-semibold">One Engine.<br>Two Faces.</h1>
+        <p class="mt-6 text-xl text-[#CBD5E1] max-w-lg">Gemynd is the Grounded Memory Platform. WestFlow is the Cognitive Orchestration Layer. Both are powered by the same provenance-first technology.</p>
+        
+        <div class="mt-8 flex gap-3 text-sm">
+          <div class="px-4 py-2 bg-white/10 rounded-xl">WestFlow = The Engine</div>
+          <div class="px-4 py-2 bg-white/10 rounded-xl">Gemynd = The Human Legacy Layer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strategy Overview -->
+  <div class="max-w-screen-2xl mx-auto px-8 py-16 border-b border-[#E2D9C8]">
+    <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
+      <div>
+        <div class="section-title mb-3">THE DUAL REALITY</div>
+        <h2 class="text-3xl font-semibold tracking-tight leading-none">We sell to two different buyers with the same technology.</h2>
+      </div>
+      <div class="text-lg text-[#475569]">
+        This is not a problem to solve. It is our strategic advantage. The copier dealer who buys WestFlow for scanning + agents today can sell StoryScribe to the funeral homes and senior living communities they already serve tomorrow.
+      </div>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <div id="colors" class="max-w-screen-2xl mx-auto px-8 py-16 border-b border-[#E2D9C8]">
+    <div class="flex justify-between items-end mb-8">
+      <div>
+        <div class="section-title">COLOR SYSTEM</div>
+        <h3 class="text-3xl font-semibold tracking-tight mt-1">Two related but distinct palettes</h3>
+      </div>
+      <div class="text-sm text-[#64748B] max-w-xs text-right">Shared foundation with intentional emotional divergence</div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- WestFlow Palette -->
+      <div class="guide-card bg-white rounded-3xl p-8 border border-[#E2D9C8]">
+        <div class="flex items-center gap-x-3 mb-6">
+          <div class="text-xs font-bold tracking-widest px-3 py-1 bg-slate-900 text-white rounded">WESTFLOW</div>
+          <div class="text-sm font-semibold">The Platform</div>
+        </div>
+        
+        <div class="grid grid-cols-4 gap-4">
+          <div>
+            <div class="swatch" style="background:#0F172A"></div>
+            <div class="mt-2 text-xs font-mono">#0F172A</div>
+            <div class="text-[10px] text-[#64748B]">Deep Navy (Primary)</div>
+          </div>
+          <div>
+            <div class="swatch" style="background:#0D9488"></div>
+            <div class="mt-2 text-xs font-mono">#0D9488</div>
+            <div class="text-[10px] text-[#64748B]">Teal (Accent)</div>
+          </div>
+          <div>
+            <div class="swatch" style="background:#F1F5F9"></div>
+            <div class="mt-2 text-xs font-mono">#F1F5F9</div>
+            <div class="text-[10px] text-[#64748B]">Light Slate</div>
+          </div>
+          <div>
+            <div class="swatch" style="background:#1E2937"></div>
+            <div class="mt-2 text-xs font-mono">#1E2937</div>
+            <div class="text-[10px] text-[#64748B]">Charcoal</div>
+          </div>
+        </div>
+        <div class="mt-6 text-xs text-[#475569]">Use for technical documentation, dealer materials, product UI, and platform storytelling.</div>
+      </div>
+
+      <!-- Gemynd Palette -->
+      <div class="guide-card bg-white rounded-3xl p-8 border border-[#E2D9C8]">
+        <div class="flex items-center gap-x-3 mb-6">
+          <div class="text-xs font-bold tracking-widest px-3 py-1 bg-[#C9A227] text-[#0F172A] rounded">GEMYND</div>
+          <div class="text-sm font-semibold">The Memory Layer</div>
+        </div>
+        
+        <div class="grid grid-cols-4 gap-4">
+          <div>
+            <div class="swatch" style="background:#0F172A"></div>
+            <div class="mt-2 text-xs font-mono">#0F172A</div>
+            <div class="text-[10px] text-[#64748B]">Heritage Navy (Primary)</div>
+          </div>
+          <div>
+            <div class="swatch" style="background:#C9A227"></div>
+            <div class="mt-2 text-xs font-mono">#C9A227</div>
+            <div class="text-[10px] text-[#64748B]">Warm Gold (Signature)</div>
+          </div>
+          <div>
+            <div class="swatch" style="background:#FDF8F0"></div>
+            <div class="mt-2 text-xs font-mono">#FDF8F0</div>
+            <div class="text-[10px] text-[#64748B]">Cream (Background)</div>
+          </div>
+          <div>
+            <div class="swatch" style="background:#1E2937"></div>
+            <div class="mt-2 text-xs font-mono">#1E2937</div>
+            <div class="text-[10px] text-[#64748B]">Charcoal</div>
+          </div>
+        </div>
+        <div class="mt-6 text-xs text-[#475569]">Use for StoryScribe marketing, funeral/senior living materials, family-facing experiences, and all emotional/legacy communications.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div id="typography" class="max-w-screen-2xl mx-auto px-8 py-16 border-b border-[#E2D9C8]">
+    <div class="section-title mb-3">TYPOGRAPHY</div>
+    <h3 class="text-3xl font-semibold tracking-tight">Shared foundation with emotional tuning</h3>
+    
+    <div class="mt-10 grid md:grid-cols-2 gap-x-12 gap-y-10">
+      <div>
+        <div class="font-semibold mb-3 text-sm tracking-wider text-[#64748B]">PRIMARY TYPEFACE (BOTH)</div>
+        <div class="text-5xl tracking-[-1.5px] font-semibold">Inter</div>
+        <div class="mt-2 text-[#475569]">Clean, modern, highly legible at all sizes. Use for all UI, body copy, and most marketing.</div>
+        
+        <div class="mt-8 text-sm">
+          <div class="grid grid-cols-3 gap-4 text-xs">
+            <div><span class="font-bold">Regular</span><br>400</div>
+            <div><span class="font-bold">Medium</span><br>500</div>
+            <div><span class="font-bold">SemiBold</span><br>600</div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="font-semibold mb-3 text-sm tracking-wider text-[#64748B]">ACCENT / HEADLINE (GEMYND)</div>
+        <div class="heading text-5xl tracking-tight">Playfair Display</div>
+        <div class="mt-2 text-[#475569]">Use sparingly for large emotional headlines, quotes, and premium touchpoints on Gemynd/StoryScribe materials only.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Voice & Tone -->
+  <div id="voice" class="max-w-screen-2xl mx-auto px-8 py-16 border-b border-[#E2D9C8]">
+    <div class="section-title mb-3">VOICE &amp; TONE</div>
+    <h3 class="text-3xl font-semibold tracking-tight mb-8">Different rooms, same house</h3>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="example-box">
+        <div class="uppercase text-xs tracking-[1.5px] font-bold text-teal-700 mb-3">WESTFLOW — TECHNICAL + CAPABLE</div>
+        <div class="space-y-4 text-[15px] text-[#334155]">
+          <p>“Replace search bars with digital workers that actually close tickets.”</p>
+          <p>“From a box of service manuals to a working agent in under four hours.”</p>
+          <p>“Grounded extraction. No hallucinations. Real outcomes.”</p>
+        </div>
+        <div class="mt-6 pt-5 border-t text-xs text-[#64748B]">Direct. Confident. Slightly irreverent. Always focused on speed and reliability.</div>
+      </div>
+      
+      <div class="example-box">
+        <div class="uppercase text-xs tracking-[1.5px] font-bold text-[#C9A227] mb-3">GEMYND — DIGNIFIED + EMOTIONALLY RESONANT</div>
+        <div class="space-y-4 text-[15px] text-[#334155]">
+          <p>“Every story. Grounded in truth.”</p>
+          <p>“From a lifetime of photos and conversations to a cinematic legacy that actually belongs to them.”</p>
+          <p>“The stories that matter most deserve to be remembered exactly as they were lived.”</p>
+        </div>
+        <div class="mt-6 pt-5 border-t text-xs text-[#64748B]">Warm. Respectful. Premium without pretension. Never clinical or overly futuristic.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo Usage -->
+  <div id="logo" class="max-w-screen-2xl mx-auto px-8 py-16 border-b border-[#E2D9C8]">
+    <div class="section-title mb-3">LOGO SYSTEM</div>
+    <h3 class="text-3xl font-semibold tracking-tight">Two related lockups. Clear hierarchy.</h3>
+    
+    <div class="mt-10 grid md:grid-cols-3 gap-8">
+      <div class="guide-card border border-[#E2D9C8] rounded-3xl p-7 bg-white">
+        <div class="h-20 flex items-center mb-6">
+          <div class="flex items-center gap-x-3">
+            <div class="w-11 h-11 bg-[#0F172A] rounded-2xl flex items-center justify-center">
+              <span class="text-[#C9A227] text-[26px] font-bold tracking-tighter">G</span>
+            </div>
+            <div class="font-semibold text-3xl tracking-[-1.5px]">Gemynd</div>
+          </div>
+        </div>
+        <div class="text-sm font-medium">Primary Gemynd Lockup</div>
+        <div class="text-xs mt-1 text-[#64748B]">Use on all Gemynd/StoryScribe consumer and funeral-facing materials.</div>
+      </div>
+      
+      <div class="guide-card border border-[#E2D9C8] rounded-3xl p-7 bg-white">
+        <div class="h-20 flex items-center mb-6">
+          <div class="font-semibold text-3xl tracking-tight text-[#0F172A]">WestFlow</div>
+        </div>
+        <div class="text-sm font-medium">Primary WestFlow Lockup</div>
+        <div class="text-xs mt-1 text-[#64748B]">Use on platform, dealer, and technical materials. Bold and modern.</div>
+      </div>
+      
+      <div class="guide-card border border-[#E2D9C8] rounded-3xl p-7 bg-white">
+        <div class="h-20 flex items-center mb-6 text-sm">
+          <div>
+            <div class="font-semibold">Gemynd</div>
+            <div class="text-xs text-[#64748B]">by WestFlow</div>
+          </div>
+        </div>
+        <div class="text-sm font-medium">Co-Branded / Sub-Branded</div>
+        <div class="text-xs mt-1 text-[#64748B]">Use when you need to show the relationship (e.g. dealer materials, investor decks, platform overview pages).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usage Rules -->
+  <div id="usage" class="max-w-screen-2xl mx-auto px-8 py-16">
+    <div class="section-title mb-3">USAGE PRINCIPLES</div>
+    <h3 class="text-3xl font-semibold tracking-tight mb-8">When to use which face</h3>
+    
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-[#E2D9C8]">
+            <th class="text-left py-4 font-semibold text-[#64748B]">Audience / Context</th>
+            <th class="text-left py-4 font-semibold text-[#64748B]">Recommended Face</th>
+            <th class="text-left py-4 font-semibold text-[#64748B]">Rationale</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[#E2D9C8]">
+          <tr>
+            <td class="py-4 pr-6">Copier dealer selling to SMBs</td>
+            <td class="font-medium">WestFlow</td>
+            <td class="text-[#475569]">Technical credibility and speed matter most.</td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-6">Funeral home evaluating StoryScribe</td>
+            <td class="font-medium">Gemynd / StoryScribe</td>
+            <td class="text-[#475569]">Trust and emotional resonance are non-negotiable.</td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-6">Same funeral home buying scanning + Aiva</td>
+            <td class="font-medium">WestFlow (with Gemynd mention)</td>
+            <td class="text-[#475569]">They already know the dealer. Show the full platform power.</td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-6">NFDA 2026 booth</td>
+            <td class="font-medium">Gemynd dominant + “Powered by WestFlow”</td>
+            <td class="text-[#475569]">Emotional story wins at the booth. Platform proof in the demo.</td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-6">Investor or strategic partner deck</td>
+            <td class="font-medium">Dual narrative (both faces)</td>
+            <td class="text-[#475569]">Show the breadth and the depth.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="bg-[#0F172A] text-[#94A3B8] py-8 text-xs">
+    <div class="max-w-screen-2xl mx-auto px-8">Gemynd Brand System v1.0 — Confidential. Do not distribute externally without approval.</div>
+  </footer>
+</body>
+</html>
