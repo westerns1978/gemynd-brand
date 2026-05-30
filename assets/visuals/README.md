@@ -1,5 +1,5 @@
-All generated visuals (infographics, storyboards, business cards, whiteboards) are included in the ZIP file at the root.
+All premium visuals (infographics, storyboards, business card mockups, refined strategy boards) are included in the root ZIP file: Gemynd-Brand-System-2026.zip
 
-These files were produced during the May 2026 brand sprint.
+These were generated during the May 2026 full brand sprint.
 
-For best results, download the full ZIP rather than viewing individual files on GitHub.
+Recommended: Download the ZIP for best viewing experience.
