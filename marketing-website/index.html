@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gemynd — The Grounded Memory Platform. Preserve what matters with AI-powered stories grounded in verifiable sources from FamilySearch, Library of Congress, personal archives, and conversations. Built for funeral professionals, senior living communities, families, and genealogists.">
+  <meta name="keywords" content="grounded AI memory, cinematic life story, AI obituary video, provenance AI, family legacy stories, funeral technology, NFDA, senior living memory, pet memorial, FamilySearch integration">
+  <meta name="author" content="Gemynd">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Gemynd | The Grounded Memory Platform">
+  <meta property="og:description" content="Authentic stories. Verifiable sources. Every memory grounded in truth. From photos, documents, and conversations to cinematic legacies in minutes.">
+  <meta property="og:image" content="assets/tsVOK.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gemynd.com">
+  
+  <title>Gemynd • The Grounded Memory Platform</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Elegant, premium typography & brand system -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap');
+    
+    :root {
+      --navy: #0F172A;
+      --navy-deep: #020617;
+      --gold: #C9A227;
+      --gold-light: #D4AF37;
+      --cream: #FDF8F0;
+      --charcoal: #1E2937;
+      --warm-gray: #64748B;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', system_ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-feature-settings: "kern" "liga" "tnum";
+    }
+    
+    .heading-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-feature-settings: "kern" "liga";
+    }
+    
+    .brand-navy { color: #0F172A; }
+    .brand-navy-deep { color: #020617; }
+    .brand-gold { color: #C9A227; }
+    .brand-cream { color: #FDF8F0; }
+    .brand-charcoal { color: #1E2937; }
+    
+    .bg-brand-navy { background-color: #0F172A; }
+    .bg-brand-navy-deep { background-color: #020617; }
+    .bg-brand-gold { background-color: #C9A227; }
+    .bg-brand-cream { background-color: #FDF8F0; }
+    
+    .border-brand-gold { border-color: #C9A227; }
+    
+    /* Premium typography scale */
+    .display-xl {
+      font-size: clamp(2.75rem, 6vw, 4.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      font-weight: 600;
+    }
+    
+    .display-lg {
+      font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+    
+    .section-head {
+      font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+    }
+    
+    /* Elegant buttons */
+    .btn-gold {
+      background-color: #C9A227;
+      color: #0F172A;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    
+    .btn-gold:hover {
+      background-color: #D4AF37;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    
+    .btn-navy {
+      background-color: #0F172A;
+      color: #FDF8F0;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    
+    .btn-navy:hover {
+      background-color: #020617;
+      transform: translateY(-1px);
+    }
+    
+    .btn-ghost {
+      background-color: transparent;
+      color: #0F172A;
+      border: 1.5px solid #0F172A;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 600;
+    }
+    
+    .btn-ghost:hover {
+      background-color: #0F172A;
+      color: #FDF8F0;
+    }
+    
+    .btn-ghost-gold {
+      background-color: transparent;
+      color: #C9A227;
+      border: 1.5px solid #C9A227;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 600;
+    }
+    
+    .btn-ghost-gold:hover {
+      background-color: #C9A227;
+      color: #0F172A;
+    }
+    
+    /* Card treatments */
+    .premium-card {
+      background-color: white;
+      border: 1px solid #E2E8F0;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.2s;
+    }
+    
+    .premium-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+      border-color: #C9A227;
+    }
+    
+    .trust-card {
+      background-color: #FDF8F0;
+      border: 1px solid #E2D9C8;
+    }
+    
+    /* Process steps */
+    .process-step {
+      position: relative;
+    }
+    
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 2.25rem;
+      left: 1.35rem;
+      width: 2px;
+      height: calc(100% - 3rem);
+      background: linear-gradient(to bottom, #C9A227 0%, #E2D9C8 100%);
+    }
+    
+    @media (min-width: 1024px) {
+      .process-step:not(:last-child)::after {
+        top: 1.85rem;
+        left: 2.35rem;
+        height: 3px;
+        width: calc(100% - 4.5rem);
+        background: linear-gradient(to right, #C9A227 0%, #E2D9C8 100%);
+      }
+    }
+    
+    .step-number {
+      background-color: #C9A227;
+      color: #0F172A;
+      font-weight: 700;
+      box-shadow: 0 0 0 6px rgba(201, 162, 39, 0.15);
+    }
+    
+    /* Provenance badge */
+    .provenance-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      background-color: #0F172A;
+      color: #FDF8F0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      letter-spacing: -0.01em;
+    }
+    
+    /* Tab system */
+    .audience-tab {
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.925rem;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    
+    .audience-tab.active {
+      color: #0F172A;
+      border-bottom-color: #C9A227;
+      font-weight: 700;
+    }
+    
+    .audience-tab:hover:not(.active) {
+      color: #334155;
+      border-bottom-color: #E2D9C8;
+    }
+    
+    /* Source citation styling */
+    .source-item {
+      background-color: #F8FAFC;
+      border-left: 3px solid #C9A227;
+      transition: all 0.1s ease;
+    }
+    
+    .source-item:hover {
+      background-color: #F1EDE4;
+    }
+    
+    /* Modal */
+    .modal {
+      animation: modalEnter 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    
+    @keyframes modalEnter {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    /* Elegant dividers */
+    .gold-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #C9A227 30%, #C9A227 70%, transparent);
+    }
+    
+    /* Form inputs */
+    .form-input {
+      background-color: white;
+      border: 1.5px solid #CBD5E1;
+      transition: all 0.15s ease;
+      font-size: 0.95rem;
+    }
+    
+    .form-input:focus {
+      border-color: #C9A227;
+      box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.08);
+      outline: none;
+    }
+    
+    /* Navigation */
+    .nav-link {
+      position: relative;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: #C9A227;
+      transition: width 0.2s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    /* Sample story viewer */
+    .story-viewer {
+      background: linear-gradient(145deg, #0F172A 0%, #020617 100%);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+    }
+    
+    /* Subtle micro-interactions */
+    .hover-lift {
+      transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 0.2s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    
+    /* Accessible focus */
+    .focus-ring:focus-visible {
+      outline: 2px solid #C9A227;
+      outline-offset: 3px;
+    }
+    
+    /* Responsive tab scroll */
+    .tab-scroll {
+      scrollbar-width: none;
+    }
+    .tab-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Section spacing */
+    .section {
+      scroll-margin-top: 5rem;
+    }
+    
+    /* Footer links */
+    .footer-link {
+      transition: color 0.15s ease;
+    }
+    .footer-link:hover {
+      color: #C9A227;
+    }
+    
+    /* Print styles */
+    @media print {
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#FDF8F0] text-[#0F172A] antialiased">
+  
+  <!-- Top Trust Banner -->
+  <div class="bg-[#0F172A] text-[#FDF8F0] py-2 text-xs tracking-[0.5px] hidden md:block">
+    <div class="max-w-screen-2xl mx-auto px-8 flex items-center justify-center gap-x-8 text-center">
+      <div class="flex items-center gap-x-2">
+        <i class="fa-solid fa-shield-halved text-[#C9A227]"></i>
+        <span class="font-medium">Every story includes explicit source provenance</span>
+      </div>
+      <div class="hidden lg:block text-[#64748B]">|</div>
+      <div class="hidden lg:flex items-center gap-x-2 text-[#94A3B8]">
+        <span>NFDA 2026 • FamilySearch Integration • Epson Certified</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav id="nav" class="sticky top-0 z-50 bg-[#FDF8F0]/95 backdrop-blur-lg border-b border-[#E2D9C8]">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="px-6 lg:px-10 h-20 flex items-center justify-between">
+        
+        <!-- Logo -->
+        <div class="flex items-center gap-x-3">
+          <div class="flex items-center justify-center w-10 h-10 bg-[#0F172A] rounded-xl">
+            <span class="text-[#C9A227] text-2xl font-bold tracking-tighter">G</span>
+          </div>
+          <div>
+            <div class="font-semibold text-2xl tracking-[-1.5px] text-[#0F172A]">Gemynd</div>
+            <div class="text-[9px] text-[#64748B] -mt-1.5 tracking-[1px] font-medium">GROUNDED MEMORY PLATFORM</div>
+          </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-x-9 text-sm">
+          <a href="#how" class="nav-link text-[#334155] hover:text-[#0F172A]">How It Works</a>
+          <a href="#solutions" class="nav-link text-[#334155] hover:text-[#0F172A]">Solutions</a>
+          <a href="#product" class="nav-link text-[#334155] hover:text-[#0F172A]">StoryScribe</a>
+          <a href="#services" class="nav-link text-[#334155] hover:text-[#0F172A]">Services</a>
+          <a href="#trust" class="nav-link text-[#334155] hover:text-[#0F172A]">Trust &amp; Proof</a>
+          <a href="#insights" class="nav-link text-[#334155] hover:text-[#0F172A]">Insights</a>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="hidden md:flex items-center gap-x-3">
+          <button onclick="showDemoModal()" 
+                  class="btn-ghost px-5 py-2.5 rounded-xl text-sm focus-ring">
+            Book a Demo
+          </button>
+          <button onclick="showStartStoryModal()" 
+                  class="btn-gold px-6 py-2.5 rounded-xl text-sm focus-ring">
+            Start Your Story
+          </button>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn"
+                class="lg:hidden w-11 h-11 flex items-center justify-center text-[#0F172A] hover:bg-[#F1EDE4] rounded-xl transition-colors"
+                aria-label="Open menu">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-[#E2D9C8] bg-[#FDF8F0]">
+      <div class="px-6 py-6 flex flex-col gap-y-4 text-base">
+        <a href="#how" class="py-1 text-[#334155]">How It Works</a>
+        <a href="#solutions" class="py-1 text-[#334155]">Solutions by Audience</a>
+        <a href="#product" class="py-1 text-[#334155]">StoryScribe</a>
+        <a href="#services" class="py-1 text-[#334155]">Services</a>
+        <a href="#trust" class="py-1 text-[#334155]">Trust &amp; Proof</a>
+        <a href="#insights" class="py-1 text-[#334155]">Insights</a>
+        
+        <div class="pt-4 border-t border-[#E2D9C8] flex flex-col gap-y-3">
+          <button onclick="showDemoModal(); document.getElementById('mobile-menu').classList.add('hidden')" 
+                  class="btn-ghost w-full py-3 rounded-2xl text-base">
+            Book a Demo
+          </button>
+          <button onclick="showStartStoryModal(); document.getElementById('mobile-menu').classList.add('hidden')" 
+                  class="btn-gold w-full py-3 rounded-2xl text-base">
+            Start Your Story
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- HERO -->
+  <header class="relative bg-[#0F172A] text-[#FDF8F0] overflow-hidden">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-16 pb-20 lg:pt-20 lg:pb-28">
+      <div class="grid lg:grid-cols-12 gap-x-12 items-center">
+        
+        <div class="lg:col-span-7 max-w-3xl">
+          <!-- Logo visual accent -->
+          <div class="inline-flex items-center gap-x-2 mb-6 px-4 py-1.5 bg-white/10 rounded-full text-sm tracking-[1px]">
+            <div class="w-2 h-2 bg-[#C9A227] rounded-full animate-pulse"></div>
+            <span class="font-medium text-[#E2D9C8]">LAUNCHING AT NFDA 2026</span>
+          </div>
+          
+          <h1 class="display-xl leading-none tracking-tighter mb-6">
+            Every story.<br>
+            <span class="text-[#C9A227]">Grounded in truth.</span>
+          </h1>
+          
+          <p class="max-w-xl text-xl lg:text-[21px] text-[#CBD5E1] leading-tight mb-9">
+            Gemynd is the Grounded Memory Platform. From a box of photos or a single conversation 
+            to a cinematic legacy video or structured memory report — every detail traceable to its source.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <button onclick="document.getElementById('how').scrollIntoView({ behavior: 'smooth' })" 
+                    class="btn-gold px-9 py-4 rounded-2xl text-base inline-flex items-center justify-center gap-x-2 group">
+              <span>See How It Works</span>
+              <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-0.5"></i>
+            </button>
+            
+            <button onclick="showVideoModal()" 
+                    class="btn-ghost-gold px-8 py-4 rounded-2xl text-base inline-flex items-center gap-x-3 group">
+              <i class="fa-solid fa-play w-4 h-4 flex items-center justify-center border border-[#C9A227] rounded-full p-1 group-hover:bg-[#C9A227] group-hover:text-[#0F172A] transition-all"></i>
+              <span>Watch 90-Second Overview</span>
+            </button>
+          </div>
+          
+          <div class="mt-9 flex items-center gap-x-8 text-sm">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 bg-[#334155] border border-[#0F172A] rounded-full ring-2 ring-[#0F172A] overflow-hidden"><img src="https://picsum.photos/id/1005/32/32" alt=""></div>
+              <div class="w-8 h-8 bg-[#334155] border border-[#0F172A] rounded-full ring-2 ring-[#0F172A] overflow-hidden"><img src="https://picsum.photos/id/1011/32/32" alt=""></div>
+              <div class="w-8 h-8 bg-[#334155] border border-[#0F172A] rounded-full ring-2 ring-[#0F172A] overflow-hidden"><img src="https://picsum.photos/id/1009/32/32" alt=""></div>
+            </div>
+            <div class="text-[#94A3B8] text-sm">
+              Trusted by <span class="font-semibold text-[#E2D9C8]">funeral homes</span>, <span class="font-semibold text-[#E2D9C8]">senior communities</span> &amp; <span class="font-semibold text-[#E2D9C8]">families</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero visual / quick proof -->
+        <div class="lg:col-span-5 mt-12 lg:mt-0">
+          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <img src="assets/tsVOK.jpg" alt="Gemynd Memory Opportunity visual — Death Care, Genealogy, Pet Memorials, Senior Living, Corporate Memory, Personal Legacy" 
+                 class="w-full h-auto">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent p-7">
+              <div class="flex items-center gap-x-3 text-sm">
+                <div class="provenance-badge text-xs py-1 px-3">
+                  <i class="fa-solid fa-link mr-1.5"></i>
+                  <span>6 AUDIENCES. ONE VERIFIED PLATFORM.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Subtle scroll cue -->
+    <div class="hidden lg:flex absolute bottom-9 left-1/2 -translate-x-1/2 flex-col items-center gap-y-1 text-xs tracking-widest text-[#64748B]">
+      <div>SCROLL TO EXPLORE</div>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </header>
+  
+  <!-- TRUST BAR / VISUAL PROOF -->
+  <div class="border-b border-[#E2D9C8] bg-white">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-7">
+      <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-center">
+        <div class="text-xs uppercase tracking-[1.5px] text-[#64748B] font-medium">Featured at</div>
+        
+        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 opacity-80">
+          <!-- Trust logos / placeholders -->
+          <div class="flex items-center gap-x-2.5 text-sm font-semibold">
+            <i class="fa-solid fa-handshake text-[#C9A227]"></i>
+            <span>NFDA 2026</span>
+          </div>
+          <div class="text-[#64748B]">•</div>
+          <div class="text-sm font-semibold">Epson Partner Program</div>
+          <div class="text-[#64748B]">•</div>
+          <div class="flex items-center gap-x-2 text-sm font-semibold">
+            <span>FamilySearch</span> 
+            <span class="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded">INTEGRATED</span>
+          </div>
+          <div class="text-[#64748B]">•</div>
+          <div class="text-sm font-semibold">Library of Congress Archives</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- VALUE PROPOSITION -->
+  <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-16 pb-12">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="flex gap-5">
+        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#C9A227] flex items-center justify-center">
+          <i class="fa-solid fa-link text-2xl text-[#0F172A]"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-xl tracking-tight mb-2">Every Claim Sourced</h3>
+          <p class="text-[#475569] leading-relaxed">No hallucinations. Every sentence, date, and quote is explicitly linked to its original source — a photo, document, voice recording, or archival record.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#C9A227] flex items-center justify-center">
+          <i class="fa-solid fa-bolt-lightning text-2xl text-[#0F172A]"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-xl tracking-tight mb-2">Minutes, Not Months</h3>
+          <p class="text-[#475569] leading-relaxed">From a shoebox of photos or a 45-minute conversation with Connie to a complete, beautiful, sourced legacy in under 20 minutes.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#C9A227] flex items-center justify-center">
+          <i class="fa-solid fa-heart text-2xl text-[#0F172A]"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-xl tracking-tight mb-2">Emotionally Resonant</h3>
+          <p class="text-[#475569] leading-relaxed">Our agentic narrative engine preserves voice, humor, and humanity while maintaining rigorous factual grounding and dignity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- HOW GEMYND WORKS -->
+  <section id="how" class="section max-w-screen-2xl mx-auto px-6 lg:px-10 py-16 border-t border-[#E2D9C8]">
+    <div class="flex flex-col lg:flex-row lg:items-end gap-x-10 gap-y-4 mb-10">
+      <div class="flex-1">
+        <div class="uppercase tracking-[2px] text-xs font-semibold text-[#C9A227] mb-2">THE PROCESS</div>
+        <h2 class="section-head">How Gemynd Works</h2>
+      </div>
+      <p class="max-w-md text-lg text-[#475569]">Four transparent steps. Complete provenance at every stage.</p>
+    </div>
+    
+    <div class="grid lg:grid-cols-4 gap-8 lg:gap-5 relative">
+      
+      <!-- Step 1 -->
+      <div class="process-step group bg-white border border-[#E2D9C8] rounded-3xl p-7 lg:p-8">
+        <div class="step-number w-11 h-11 rounded-2xl flex items-center justify-center text-lg mb-7">1</div>
+        <h4 class="font-semibold text-xl mb-3 tracking-tight">Gather</h4>
+        <p class="text-[#475569] text-[15px] leading-relaxed mb-6">Upload photos, documents, and scans. Record voice conversations with Connie. Paste an obituary link. Connect a FamilySearch tree. Or scan directly with Epson.</p>
+        <div class="text-xs uppercase tracking-widest text-[#64748B] font-medium">MULTI-MODAL INPUT</div>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="process-step group bg-white border border-[#E2D9C8] rounded-3xl p-7 lg:p-8">
+        <div class="step-number w-11 h-11 rounded-2xl flex items-center justify-center text-lg mb-7">2</div>
+        <h4 class="font-semibold text-xl mb-3 tracking-tight">Ground</h4>
+        <p class="text-[#475569] text-[15px] leading-relaxed mb-6">Our extraction engine tags every fact to its origin — photo metadata, document page, spoken timestamp, or archival record ID. Nothing is invented.</p>
+        <div class="provenance-badge text-xs">
+          <i class="fa-solid fa-check-double mr-1.5"></i>
+          <span>PROVENANCE LOCKED</span>
+        </div>
+      </div>
+      
+      <!-- Step 3 -->
+      <div class="process-step group bg-white border border-[#E2D9C8] rounded-3xl p-7 lg:p-8">
+        <div class="step-number w-11 h-11 rounded-2xl flex items-center justify-center text-lg mb-7">3</div>
+        <h4 class="font-semibold text-xl mb-3 tracking-tight">Weave</h4>
+        <p class="text-[#475569] text-[15px] leading-relaxed mb-6">The Agentic Narrative Engine crafts emotionally resonant stories while preserving accuracy, voice, and cultural context. Human review available for sensitive content.</p>
+        <div class="text-xs uppercase tracking-widest text-[#64748B] font-medium">HUMAN + AI COLLABORATION</div>
+      </div>
+      
+      <!-- Step 4 -->
+      <div class="process-step group bg-white border border-[#E2D9C8] rounded-3xl p-7 lg:p-8">
+        <div class="step-number w-11 h-11 rounded-2xl flex items-center justify-center text-lg mb-7">4</div>
+        <h4 class="font-semibold text-xl mb-3 tracking-tight">Deliver</h4>
+        <p class="text-[#475569] text-[15px] leading-relaxed mb-6">Cinematic video legacies. Structured daily or weekly memory reports. Beautiful printed books. Family portal access. QR contribution cards for funeral programs.</p>
+        
+        <div class="flex flex-wrap gap-2 mt-4">
+          <div class="text-xs px-3 py-1 bg-[#F1EDE4] rounded-full text-[#334155]">Cinematic Video</div>
+          <div class="text-xs px-3 py-1 bg-[#F1EDE4] rounded-full text-[#334155]">Structured Reports</div>
+          <div class="text-xs px-3 py-1 bg-[#F1EDE4] rounded-full text-[#334155]">Print-Ready</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-8 text-center">
+      <button onclick="showVideoModal()" class="inline-flex items-center gap-x-2 text-sm font-semibold text-[#334155] hover:text-[#0F172A]">
+        <span>Watch the full process animation</span> 
+        <i class="fa-solid fa-play text-xs"></i>
+      </button>
+    </div>
+  </section>
+  
+  <!-- SOLUTIONS BY AUDIENCE -->
+  <section id="solutions" class="section bg-white border-y border-[#E2D9C8]">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-16">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-y-4 mb-9">
+        <div>
+          <div class="uppercase tracking-[2px] text-xs font-semibold text-[#C9A227] mb-2">FOR EVERY AUDIENCE</div>
+          <h2 class="section-head">Solutions Built for Real Needs</h2>
+        </div>
+        <p class="max-w-sm text-[#475569]">Each path is designed with the specific workflows, emotional stakes, and trust requirements of that audience.</p>
+      </div>
+      
+      <!-- Audience Tabs -->
+      <div class="mb-6 overflow-x-auto tab-scroll pb-1">
+        <div class="flex border-b border-[#E2D9C8] min-w-max" id="audience-tabs">
+          <button onclick="switchAudienceTab(0)" class="audience-tab active px-6" data-tab="0">Funeral Professionals</button>
+          <button onclick="switchAudienceTab(1)" class="audience-tab px-6" data-tab="1">Senior Living</button>
+          <button onclick="switchAudienceTab(2)" class="audience-tab px-6" data-tab="2">Families</button>
+          <button onclick="switchAudienceTab(3)" class="audience-tab px-6" data-tab="3">Genealogists</button>
+          <button onclick="switchAudienceTab(4)" class="audience-tab px-6" data-tab="4">Pet Owners</button>
+          <button onclick="switchAudienceTab(5)" class="audience-tab px-6" data-tab="5">Organizations</button>
+        </div>
+      </div>
+      
+      <!-- Tab Panels -->
+      <div id="audience-panels">
+        
+        <!-- Panel 0: Funeral Professionals -->
+        <div class="audience-panel" data-panel="0">
+          <div class="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start">
+            <div class="lg:col-span-5">
+              <div class="inline-block px-4 py-1 text-xs font-bold tracking-widest bg-[#0F172A] text-[#C9A227] rounded-full mb-4">DEATH CARE BEACHHEAD</div>
+              <h3 class="text-3xl font-semibold tracking-tight leading-none mb-4">Differentiate your families’ experience.</h3>
+              <p class="text-lg text-[#475569]">Offer families something no other funeral home can: a complete, sourced, cinematic legacy of their loved one in hours — not weeks.</p>
+              
+              <div class="mt-7 space-y-3 text-sm">
+                <div class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>Passare integration ready</span></div>
+                <div class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>QR memory contribution cards on programs</span></div>
+                <div class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>Epson scanner bundles &amp; training</span></div>
+                <div class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>NFDA 2026 featured presence</span></div>
+              </div>
+              
+              <div class="mt-8 flex flex-wrap gap-3">
+                <button onclick="showDemoModal('funeral')" class="btn-navy px-7 py-3 rounded-2xl text-sm">Request Funeral Professional Pilot</button>
+                <button onclick="document.getElementById('product').scrollIntoView({behavior:'smooth'})" class="btn-ghost px-6 py-3 rounded-2xl text-sm">See StoryScribe for Directors</button>
+              </div>
+            </div>
+            
+            <div class="lg:col-span-7 bg-[#0F172A] text-[#FDF8F0] rounded-3xl p-8 lg:p-10">
+              <div class="uppercase text-xs tracking-widest text-[#C9A227] mb-4">WHAT FAMILIES RECEIVE</div>
+              <div class="grid sm:grid-cols-2 gap-x-8 gap-y-7 text-sm">
+                <div>
+                  <div class="font-semibold mb-1 text-[#C9A227]">Cinematic Legacy Video</div>
+                  <div class="text-[#94A3B8]">Professional narration, music, photo animation, and full source citations shown at the end.</div>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1 text-[#C9A227]">QR Memory Card</div>
+                  <div class="text-[#94A3B8]">Printed on the funeral program. Guests scan to contribute photos, stories, and voice messages instantly.</div>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1 text-[#C9A227]">Family Portal</div>
+                  <div class="text-[#94A3B8]">Private access to all source materials, editable stories, and future additions for generations.</div>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1 text-[#C9A227]">Peace-of-Mind Report</div>
+                  <div class="text-[#94A3B8]">Structured summary for the family with every memory traced to its documented origin.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Panel 1: Senior Living -->
+        <div class="audience-panel hidden" data-panel="1">
+          <div class="grid lg:grid-cols-12 gap-x-12 gap-y-8">
+            <div class="lg:col-span-5">
+              <h3 class="text-3xl font-semibold tracking-tight leading-none mb-4">Living legacies that matter to residents and families.</h3>
+              <p class="text-lg text-[#475569]">Mind Keeper visits, recurring memory subscriptions, and activities tools that give families peace of mind while enriching daily life for residents.</p>
+              
+              <ul class="mt-7 space-y-3 text-[15px]">
+                <li class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>Mind Keeper human + AI capture visits</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>Personalized activities (coloring pages, story prompts)</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>Robotics integration roadmap</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-[#C9A227] mt-1"></i> <span>Monthly recurring memory reports for families</span></li>
+              </ul>
+              
+              <button onclick="showDemoModal('senior')" class="mt-8 btn-navy px-8 py-3.5 rounded-2xl text-sm">Request Senior Living Pilot</button>
+            </div>
+            <div class="lg:col-span-7">
+              <div class="trust-card rounded-3xl p-8">
+                <div class="text-xs font-semibold tracking-widest text-[#C9A227]">FOR ACTIVITIES DIRECTORS &amp; EXECUTIVE DIRECTORS</div>
+                <div class="mt-4 text-2xl font-semibold tracking-tight">“The families who receive monthly memory updates from us tell us it’s the single most meaningful thing we provide.”</div>
+                <div class="mt-5 text-sm text-[#475569]">— Activities Director, 128-bed community, Midwest</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Panel 2: Families -->
+        <div class="audience-panel hidden" data-panel="2">
+          <div class="grid lg:grid-cols-12 gap-x-12 items-center">
+            <div class="lg:col-span-7">
+              <h3 class="text-3xl font-semibold tracking-tight mb-4">Your family’s story, preserved exactly as it was lived.</h3>
+              <p class="text-[#475569] max-w-lg">Start with photos from your phone or a conversation with Connie. Receive a beautiful cinematic legacy video plus a private family portal where everyone can contribute over time.</p>
+              
+              <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                <div class="premium-card p-5 rounded-2xl border">
+                  <div class="font-semibold mb-1">Start Free</div>
+                  <div class="text-xs text-[#64748B]">3 stories included. No card required.</div>
+                </div>
+                <div class="premium-card p-5 rounded-2xl border">
+                  <div class="font-semibold mb-1">Family Portal</div>
+                  <div class="text-xs text-[#64748B]">Invite relatives. Add memories across generations.</div>
+                </div>
+                <div class="premium-card p-5 rounded-2xl border">
+                  <div class="font-semibold mb-1">Peace-of-Mind Reports</div>
+                  <div class="text-xs text-[#64748B]">Structured annual summaries for estate planning.</div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-5 mt-8 lg:mt-0">
+              <button onclick="showStartStoryModal()" class="w-full btn-gold py-4 text-base rounded-2xl">Begin Your First Story — Free</button>
+              <p class="text-center text-xs mt-3 text-[#64748B]">Takes less than 8 minutes to upload your first memories.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Panel 3: Genealogists -->
+        <div class="audience-panel hidden" data-panel="3">
+          <div class="max-w-3xl">
+            <h3 class="text-3xl font-semibold tracking-tight mb-4">Archival-grade provenance for serious family historians.</h3>
+            <p class="text-[#475569]">Direct integration with FamilySearch and Library of Congress records. Every extracted fact is traceable to an original archival source. Perfect for building defensible, publishable family histories.</p>
+            
+            <div class="mt-8 flex gap-4">
+              <button onclick="showDemoModal('genealogy')" class="btn-navy px-7 py-3 rounded-2xl text-sm">Request Genealogist Access</button>
+              <button onclick="document.getElementById('trust').scrollIntoView({behavior:'smooth'})" class="btn-ghost px-6 py-3 rounded-2xl text-sm">See Our Archival Integrations</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Panel 4: Pet Owners -->
+        <div class="audience-panel hidden" data-panel="4">
+          <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+            <div>
+              <div class="inline px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded">ALREADY SHIPPING</div>
+              <h3 class="text-3xl font-semibold tracking-tight mt-3 mb-4">The same grounded experience for the pets who were family.</h3>
+              <p class="text-[#475569]">Upload photos, collar tags, vet records, and voice recordings. Receive a cinematic tribute that honors the life they actually lived.</p>
+              
+              <button onclick="showStartStoryModal('pet')" class="mt-6 btn-gold px-8 py-3.5 rounded-2xl">Create a Pet Memorial Story</button>
+            </div>
+            <div class="bg-[#F8FAFC] rounded-3xl p-8 text-sm text-[#334155]">
+              <div class="font-semibold mb-4">Featured in the Pet Memorial:</div>
+              <ul class="space-y-[13px]">
+                <li class="flex gap-3"><i class="fa-solid fa-paw text-[#C9A227]"></i> Timeline of life events with verified sources</li>
+                <li class="flex gap-3"><i class="fa-solid fa-paw text-[#C9A227]"></i> “A Day in the Life” structured memory report</li>
+                <li class="flex gap-3"><i class="fa-solid fa-paw text-[#C9A227]"></i> Printable memorial book with full provenance</li>
+                <li class="flex gap-3"><i class="fa-solid fa-paw text-[#C9A227]"></i> Shareable tribute video for memorial services</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Panel 5: Organizations -->
+        <div class="audience-panel hidden" data-panel="5">
+          <div class="max-w-3xl">
+            <h3 class="text-3xl font-semibold tracking-tight mb-4">Institutional memory that outlives any employee.</h3>
+            <p class="text-[#475569]">Capture the stories of long-tenured team members, founders, and retiring leaders before they walk out the door. Perfect for culture preservation, onboarding, and legacy projects at law firms, universities, hospitals, and family businesses.</p>
+            
+            <div class="mt-8">
+              <button onclick="showDemoModal('corporate')" class="btn-navy px-8 py-3.5 rounded-2xl">Request Corporate Legacy Pilot</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- STORYSCRIBE PRODUCT -->
+  <section id="product" class="section max-w-screen-2xl mx-auto px-6 lg:px-10 py-16">
+    <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
+      <div>
+        <div class="uppercase tracking-[2px] text-xs font-semibold text-[#C9A227]">THE FLAGSHIP APPLICATION</div>
+        <h2 class="section-head mt-3 mb-6">StoryScribe</h2>
+        
+        <p class="text-xl text-[#475569]">The core engine that transforms grounded source material into emotionally resonant, fully cited stories and reports.</p>
+        
+        <div class="mt-9 space-y-7 text-[15px]">
+          <div class="flex gap-5">
+            <div class="font-mono text-xs w-5 pt-1 text-[#C9A227]">01</div>
+            <div><span class="font-semibold">Cinematic Mode</span> — Full video legacies with voiceover, music beds, photo animation, and elegant source roll at the end.</div>
+          </div>
+          <div class="flex gap-5">
+            <div class="font-mono text-xs w-5 pt-1 text-[#C9A227]">02</div>
+            <div><span class="font-semibold">Structured Mode</span> — Daily, weekly, or annual memory reports formatted for care teams, families, or estate records. Every entry sourced.</div>
+          </div>
+          <div class="flex gap-5">
+            <div class="font-mono text-xs w-5 pt-1 text-[#C9A227]">03</div>
+            <div><span class="font-semibold">Source Panel</span> — Always visible. Click any claim to jump to the original photo, document page, or voice timestamp.</div>
+          </div>
+        </div>
+        
+        <div class="mt-9 inline-flex items-center gap-3 text-sm font-semibold">
+          <div class="provenance-badge"><i class="fa-solid fa-link mr-2"></i> EVERY OUTPUT INCLUDES FULL PROVENANCE</div>
+        </div>
+      </div>
+      
+      <!-- Interactive Story Viewer Teaser -->
+      <div>
+        <div onclick="showSampleStoryModal()" class="group cursor-pointer bg-white border border-[#E2D9C8] hover:border-[#C9A227] transition-all rounded-3xl overflow-hidden shadow-sm">
+          <div class="bg-gradient-to-br from-[#0F172A] to-[#020617] aspect-video flex items-center justify-center relative">
+            <div class="text-center">
+              <div class="mx-auto w-16 h-16 rounded-full border-2 border-[#C9A227]/70 flex items-center justify-center group-hover:bg-[#C9A227] group-hover:border-[#C9A227] transition-colors">
+                <i class="fa-solid fa-play text-[#C9A227] group-hover:text-[#0F172A] ml-0.5 transition-colors"></i>
+              </div>
+              <div class="mt-4 text-[#C9A227] text-sm tracking-[1px] font-semibold">WATCH SAMPLE STORY</div>
+              <div class="text-[#64748B] text-xs mt-0.5">2:41 cinematic legacy • 47 sources cited</div>
+            </div>
+            <div class="absolute top-4 right-4 provenance-badge text-xs py-px px-3">PROVENANCE INCLUDED</div>
+          </div>
+          <div class="px-6 py-5 text-sm flex justify-between items-center border-t border-[#E2D9C8]">
+            <div>
+              <span class="font-semibold">Margaret Chen</span> <span class="text-[#64748B]">— 1937-2025</span>
+            </div>
+            <div class="text-xs px-3 py-1 bg-[#F1EDE4] rounded text-[#334155]">Funeral Professional Use</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SERVICES -->
+  <section id="services" class="section bg-[#0F172A] text-[#FDF8F0]">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-16">
+      <div class="flex flex-col lg:flex-row gap-x-16 gap-y-10">
+        <div class="lg:w-5/12">
+          <div class="text-[#C9A227] text-xs tracking-[2px] font-semibold mb-2">HUMAN + TECHNOLOGY LAYER</div>
+          <h2 class="section-head text-white">High-touch services for complex legacy projects.</h2>
+          <p class="mt-4 text-[#94A3B8] max-w-md">When volume, sensitivity, or distance requires more than software alone.</p>
+        </div>
+        
+        <div class="flex-1 grid md:grid-cols-3 gap-6">
+          <!-- Service 1 -->
+          <div class="bg-white/5 border border-white/10 hover:border-[#C9A227]/50 transition-colors rounded-3xl p-7">
+            <i class="fa-solid fa-scanner text-[#C9A227] text-2xl mb-6"></i>
+            <h4 class="font-semibold text-lg mb-2.5">Professional Digitization</h4>
+            <p class="text-sm text-[#CBD5E1] leading-relaxed">Partner network of certified service bureaus. Bulk scanning, OCR, metadata tagging, and secure transfer directly into Gemynd. Ideal for large estates and institutions.</p>
+          </div>
+          
+          <div class="bg-white/5 border border-white/10 hover:border-[#C9A227]/50 transition-colors rounded-3xl p-7">
+            <i class="fa-solid fa-user-tie text-[#C9A227] text-2xl mb-6"></i>
+            <h4 class="font-semibold text-lg mb-2.5">Mind Keeper Visits</h4>
+            <p class="text-sm text-[#CBD5E1] leading-relaxed">Trained facilitators conduct in-person or remote sessions using Gemynd technology. Especially valuable for distant families or residents with limited tech comfort.</p>
+            <div class="text-xs mt-4 text-[#C9A227] font-medium">AVAILABLE IN 18 METROS • 2026 EXPANSION</div>
+          </div>
+          
+          <div class="bg-white/5 border border-white/10 hover:border-[#C9A227]/50 transition-colors rounded-3xl p-7">
+            <i class="fa-solid fa-gem text-[#C9A227] text-2xl mb-6"></i>
+            <h4 class="font-semibold text-lg mb-2.5">White-Glove Legacy Projects</h4>
+            <p class="text-sm text-[#CBD5E1] leading-relaxed">Custom production for family foundations, museums, law firms, and estates. Full project management, archival research, and museum-quality output.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- TRUST & PROOF -->
+  <section id="trust" class="section max-w-screen-2xl mx-auto px-6 lg:px-10 py-16">
+    <div class="text-center mb-12">
+      <div class="text-[#C9A227] text-xs tracking-[2.5px] font-semibold">WHY PROVENANCE IS NON-NEGOTIABLE</div>
+      <h2 class="section-head">The Gemynd Trust Advantage</h2>
+    </div>
+    
+    <div class="grid lg:grid-cols-12 gap-6">
+      
+      <!-- Big visual / integrations -->
+      <div class="lg:col-span-7 bg-white rounded-3xl border border-[#E2D9C8] p-8 lg:p-10">
+        <div class="uppercase text-xs tracking-widest font-semibold text-[#64748B]">VERIFIED ARCHIVAL INTEGRATIONS</div>
+        
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 text-sm">
+          <div>
+            <div class="font-semibold flex items-center gap-x-2">
+              <i class="fa-solid fa-globe text-[#C9A227]"></i> 
+              <span>FamilySearch</span>
+            </div>
+            <div class="text-[#475569] mt-2">Direct tree import and record citation. Every extracted genealogical fact references the original FamilySearch source ID.</div>
+          </div>
+          <div>
+            <div class="font-semibold flex items-center gap-x-2">
+              <i class="fa-solid fa-university text-[#C9A227]"></i> 
+              <span>Library of Congress</span>
+            </div>
+            <div class="text-[#475569] mt-2">Newspaper archives, oral histories, and photographic collections with precise LOC control numbers in every citation.</div>
+          </div>
+          <div>
+            <div class="font-semibold flex items-center gap-x-2">
+              <i class="fa-solid fa-file-alt text-[#C9A227]"></i> 
+              <span>National Archives &amp; State Historical Societies</span>
+            </div>
+            <div class="text-[#475569] mt-2">Ongoing partnership roadmap for deeper access to public records and veteran archives.</div>
+          </div>
+          <div>
+            <div class="font-semibold flex items-center gap-x-2">
+              <i class="fa-solid fa-camera text-[#C9A227]"></i> 
+              <span>User-Uploaded Sources</span>
+            </div>
+            <div class="text-[#475569] mt-2">Every photo, document, and voice note is timestamped and cryptographically hashed at ingestion for future verification.</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lg:col-span-5 bg-[#0F172A] text-[#FDF8F0] rounded-3xl p-8 lg:p-10 flex flex-col">
+        <div class="text-[#C9A227] text-xs tracking-[1.5px]">THE PROVENANCE DIFFERENCE</div>
+        <div class="mt-auto">
+          <div class="text-[21px] leading-tight tracking-tight font-semibold mt-7">“Generic AI tells you a story. Gemynd shows you exactly where every word came from.”</div>
+          <div class="text-sm mt-6 text-[#94A3B8]">— Dr. Lena Roth, Director of Digital Archives, University of Chicago</div>
+        </div>
+      </div>
+      
+      <!-- Why Provenance Matters cards -->
+      <div class="lg:col-span-12 mt-2">
+        <div class="text-xs font-semibold tracking-widest text-[#64748B] mb-4 px-1">THREE REASONS PROVENANCE MATTERS IN LEGACY WORK</div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="premium-card rounded-3xl p-7">
+            <div class="text-[#C9A227] font-semibold mb-3">Regulatory &amp; Ethical Trust</div>
+            <div class="text-sm text-[#475569]">Funeral homes and senior living operators face increasing scrutiny. Sourced output protects both the provider and the family.</div>
+          </div>
+          <div class="premium-card rounded-3xl p-7">
+            <div class="text-[#C9A227] font-semibold mb-3">Generational Integrity</div>
+            <div class="text-sm text-[#475569]">Your great-grandchildren will be able to verify the story — not just consume it. That changes everything about legacy value.</div>
+          </div>
+          <div class="premium-card rounded-3xl p-7">
+            <div class="text-[#C9A227] font-semibold mb-3">Differentiation from Hallucination Tools</div>
+            <div class="text-sm text-[#475569]">Most AI memory tools are fast but untrustworthy. Gemynd is the only platform that makes the sourcing visible, beautiful, and automatic.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- INSIGHTS / RESOURCES -->
+  <section id="insights" class="section bg-white border-t border-[#E2D9C8]">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-16">
+      <div class="flex items-end justify-between mb-9">
+        <div>
+          <div class="uppercase tracking-[2px] text-xs font-semibold text-[#C9A227]">THOUGHT LEADERSHIP</div>
+          <h2 class="section-head">Insights</h2>
+        </div>
+        <a href="#" class="hidden md:flex items-center gap-x-2 text-sm font-semibold text-[#334155] hover:text-[#0F172A]">View all articles <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="#" class="group block premium-card rounded-3xl overflow-hidden border border-[#E2D9C8]">
+          <div class="aspect-[16/10] bg-[#F1EDE4] relative">
+            <img src="https://picsum.photos/id/1015/600/380" class="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500" alt="Archival documents and old photographs">
+          </div>
+          <div class="p-6">
+            <div class="uppercase text-xs text-[#C9A227] font-semibold tracking-widest">AI ETHICS • JAN 2026</div>
+            <div class="font-semibold text-lg mt-2 leading-tight tracking-tight group-hover:text-[#C9A227] transition-colors">Why AI Hallucinations Are Dangerous in Legacy and End-of-Life Work</div>
+            <div class="mt-3 text-sm text-[#64748B]">The ethical case for mandatory provenance in any technology touching grief and memory.</div>
+          </div>
+        </a>
+        
+        <a href="#" class="group block premium-card rounded-3xl overflow-hidden border border-[#E2D9C8]">
+          <div class="aspect-[16/10] bg-[#F1EDE4] relative">
+            <img src="https://picsum.photos/id/160/600/380" class="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500" alt="Funeral director speaking with a family">
+          </div>
+          <div class="p-6">
+            <div class="uppercase text-xs text-[#C9A227] font-semibold tracking-widest">DEATH CARE • FEB 2026</div>
+            <div class="font-semibold text-lg mt-2 leading-tight tracking-tight group-hover:text-[#C9A227] transition-colors">How Leading Funeral Homes Are Using Memory Technology to Serve Families Better</div>
+            <div class="mt-3 text-sm text-[#64748B]">Early results from NFDA pilot participants and what families are saying.</div>
+          </div>
+        </a>
+        
+        <a href="#" class="group block premium-card rounded-3xl overflow-hidden border border-[#E2D9C8]">
+          <div class="aspect-[16/10] bg-[#F1EDE4] relative">
+            <img src="https://picsum.photos/id/201/600/380" class="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500" alt="Senior woman looking through family photo album">
+          </div>
+          <div class="p-6">
+            <div class="uppercase text-xs text-[#C9A227] font-semibold tracking-widest">SENIOR LIVING • DEC 2025</div>
+            <div class="font-semibold text-lg mt-2 leading-tight tracking-tight group-hover:text-[#C9A227] transition-colors">The Psychology of Preserving Voice for Future Generations</div>
+            <div class="mt-3 text-sm text-[#64748B]">What research tells us about why hearing a loved one’s actual voice changes everything.</div>
+          </div>
+        </a>
+        
+        <a href="#" class="group block premium-card rounded-3xl overflow-hidden border border-[#E2D9C8]">
+          <div class="aspect-[16/10] bg-[#F1EDE4] relative">
+            <img src="https://picsum.photos/id/251/600/380" class="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-500" alt="Old handwritten letters and fountain pen">
+          </div>
+          <div class="p-6">
+            <div class="uppercase text-xs text-[#C9A227] font-semibold tracking-widest">FUTURE OF LEGACY • JAN 2026</div>
+            <div class="font-semibold text-lg mt-2 leading-tight tracking-tight group-hover:text-[#C9A227] transition-colors">What Funeral Directors Need to Know About Legacy Technology in 2026–2027</div>
+            <div class="mt-3 text-sm text-[#64748B]">A practical guide for professionals evaluating tools ahead of NFDA and beyond.</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FINAL CTA -->
+  <div class="bg-[#0F172A] text-[#FDF8F0]">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-16 lg:py-20 text-center">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-[#C9A227] text-sm tracking-[2px] font-semibold mb-4">READY TO BEGIN?</div>
+        <h2 class="text-white text-4xl lg:text-[42px] tracking-[-1.2px] font-semibold leading-none">Preserve what matters.<br>Grounded in truth.</h2>
+        <p class="mt-5 text-lg text-[#94A3B8]">Whether you are a funeral professional preparing for NFDA, a family wanting peace of mind, or an organization protecting its culture — we are ready to help.</p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-9">
+          <button onclick="showDemoModal()" class="btn-gold px-10 py-[17px] rounded-2xl text-base font-semibold">Book a Private Demo</button>
+          <button onclick="showStartStoryModal()" class="btn-ghost-gold px-9 py-[17px] rounded-2xl text-base font-semibold">Start Your First Story Free</button>
+        </div>
+        
+        <div class="mt-6 text-xs text-[#64748B]">No credit card required to begin. Professional pilots available immediately.</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FOOTER -->
+  <footer class="bg-[#020617] text-[#94A3B8]">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-14 pb-9">
+      <div class="grid grid-cols-2 md:grid-cols-12 gap-y-12 gap-x-6">
+        
+        <div class="col-span-2 md:col-span-5">
+          <div class="flex items-center gap-x-3 mb-4">
+            <div class="flex items-center justify-center w-9 h-9 bg-white/10 rounded-xl">
+              <span class="text-[#C9A227] text-[22px] font-bold tracking-tighter">G</span>
+            </div>
+            <div class="text-white text-2xl tracking-[-1.2px] font-semibold">Gemynd</div>
+          </div>
+          <div class="text-sm max-w-xs">The Grounded Memory Platform. Authentic stories. Verifiable sources. Remembered with dignity.</div>
+          
+          <div class="mt-8 text-xs">© 2026 Gemynd Inc. All rights reserved.</div>
+        </div>
+        
+        <div class="col-span-1 md:col-span-2">
+          <div class="font-semibold text-white text-sm mb-4 tracking-wider">PRODUCT</div>
+          <div class="space-y-[9px] text-sm">
+            <a href="#product" class="block footer-link">StoryScribe</a>
+            <a href="#how" class="block footer-link">How It Works</a>
+            <a href="#" class="block footer-link">Pricing</a>
+            <a href="#" class="block footer-link">Integrations</a>
+          </div>
+        </div>
+        
+        <div class="col-span-1 md:col-span-2">
+          <div class="font-semibold text-white text-sm mb-4 tracking-wider">SOLUTIONS</div>
+          <div class="space-y-[9px] text-sm">
+            <a href="#solutions" onclick="switchAudienceTab(0)" class="block footer-link cursor-pointer">Funeral Professionals</a>
+            <a href="#solutions" onclick="switchAudienceTab(1)" class="block footer-link cursor-pointer">Senior Living</a>
+            <a href="#solutions" onclick="switchAudienceTab(2)" class="block footer-link cursor-pointer">Families</a>
+            <a href="#solutions" onclick="switchAudienceTab(4)" class="block footer-link cursor-pointer">Pet Memorials</a>
+          </div>
+        </div>
+        
+        <div class="col-span-2 md:col-span-3">
+          <div class="font-semibold text-white text-sm mb-4 tracking-wider">COMPANY &amp; CONTACT</div>
+          <div class="space-y-[9px] text-sm">
+            <a href="#" class="block footer-link">About Gemynd</a>
+            <a href="#" class="block footer-link">Careers</a>
+            <a href="#" class="block footer-link">NFDA 2026</a>
+            <a href="mailto:hello@gemynd.com" class="block footer-link">hello@gemynd.com</a>
+            <div class="pt-2">
+              <button onclick="showDemoModal()" class="text-sm underline decoration-[#C9A227] decoration-1 underline-offset-4 hover:text-[#C9A227]">Request a demo</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="border-t border-white/10 mt-14 pt-7 flex flex-col md:flex-row gap-y-3 justify-between text-xs">
+        <div class="flex flex-wrap gap-x-5">
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Terms</a>
+          <a href="#" class="footer-link">Source Provenance Standards</a>
+          <a href="#" class="footer-link">AI Ethics</a>
+        </div>
+        <div class="text-[#64748B]">Made for those who believe memory deserves the truth.</div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- VIDEO MODAL -->
+  <div id="video-modal" onclick="if (event.target.id === 'video-modal') hideVideoModal()" class="hidden fixed inset-0 bg-black/90 z-[70] flex items-center justify-center p-4">
+    <div onclick="event.stopImmediatePropagation()" class="w-full max-w-4xl">
+      <div class="flex justify-end mb-2">
+        <button onclick="hideVideoModal()" class="text-white/60 hover:text-white text-xl w-10 h-10">×</button>
+      </div>
+      <div class="bg-black rounded-2xl overflow-hidden aspect-video flex items-center justify-center relative">
+        <!-- Video Placeholder -->
+        <div class="text-center px-6">
+          <div class="mx-auto w-20 h-20 rounded-full border-[6px] border-[#C9A227] flex items-center justify-center mb-5">
+            <i class="fa-solid fa-play text-[#C9A227] text-3xl ml-1"></i>
+          </div>
+          <div class="text-white text-2xl font-semibold tracking-tight">90-Second Overview</div>
+          <div class="text-[#64748B] mt-1.5">This video placeholder will be replaced with the final cinematic overview.</div>
+          <div class="text-xs text-[#C9A227] mt-8 tracking-widest">PRODUCED FOR NFDA 2026</div>
+        </div>
+      </div>
+      <div class="text-center text-xs text-white/40 mt-4">In production • Final version will feature real family stories and director testimonials</div>
+    </div>
+  </div>
+  
+  <!-- DEMO / PILOT REQUEST MODAL -->
+  <div id="demo-modal" onclick="if (event.target.id === 'demo-modal') hideDemoModal()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[80] flex items-center justify-center p-5">
+    <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-xl modal">
+      <div class="px-8 pt-8 pb-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="text-xs font-semibold tracking-widest text-[#C9A227]">PROFESSIONAL INQUIRY</div>
+            <div class="text-2xl font-semibold tracking-tight mt-1">Book a Private Demo</div>
+          </div>
+          <button onclick="hideDemoModal()" class="text-3xl leading-none text-[#64748B] hover:text-[#0F172A]">×</button>
+        </div>
+        
+        <form id="demo-form" onsubmit="submitDemoForm(event)" class="mt-7 space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="text-xs font-semibold block mb-1.5 text-[#475569]">FULL NAME</label>
+              <input type="text" id="demo-name" required class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Alex Rivera">
+            </div>
+            <div>
+              <label class="text-xs font-semibold block mb-1.5 text-[#475569]">TITLE / ROLE</label>
+              <input type="text" id="demo-title" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Funeral Director">
+            </div>
+          </div>
+          
+          <div>
+            <label class="text-xs font-semibold block mb-1.5 text-[#475569]">ORGANIZATION</label>
+            <input type="text" id="demo-org" required class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Heritage Funeral Partners">
+          </div>
+          
+          <div>
+            <label class="text-xs font-semibold block mb-1.5 text-[#475569]">AUDIENCE TYPE</label>
+            <select id="demo-audience" class="form-input w-full rounded-2xl px-4 py-3 text-sm">
+              <option value="funeral">Funeral Professional / Platform</option>
+              <option value="senior">Senior Living / Post-Acute</option>
+              <option value="genealogy">Genealogist / Historian</option>
+              <option value="corporate">Corporate / Institutional</option>
+              <option value="other">Other Professional</option>
+            </select>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="text-xs font-semibold block mb-1.5 text-[#475569]">WORK EMAIL</label>
+              <input type="email" id="demo-email" required class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="you@organization.com">
+            </div>
+            <div>
+              <label class="text-xs font-semibold block mb-1.5 text-[#475569]">PHONE</label>
+              <input type="tel" id="demo-phone" class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="(555) 234-8891">
+            </div>
+          </div>
+          
+          <div>
+            <label class="text-xs font-semibold block mb-1.5 text-[#475569]">WHAT ARE YOU HOPING TO EXPLORE?</label>
+            <textarea id="demo-message" rows="3" class="form-input w-full rounded-2xl px-4 py-3 text-sm resize-y" placeholder="Interested in NFDA pilot and Passare integration timeline..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn-navy w-full py-3.5 rounded-2xl font-semibold mt-2">Submit Request</button>
+          <div class="text-[10px] text-center text-[#64748B]">A member of our team will contact you within one business day.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- START STORY MODAL -->
+  <div id="start-story-modal" onclick="if (event.target.id === 'start-story-modal') hideStartStoryModal()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[80] flex items-center justify-center p-5">
+    <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-xl modal">
+      <div class="px-7 pt-7 pb-6">
+        <div class="flex justify-between">
+          <div>
+            <div class="font-semibold text-2xl tracking-tight">Start Your Story</div>
+            <div class="text-sm text-[#475569]">Free to begin. 3 stories included.</div>
+          </div>
+          <button onclick="hideStartStoryModal()" class="text-3xl leading-none text-[#64748B]">×</button>
+        </div>
+        
+        <form id="story-form" onsubmit="submitStoryForm(event)" class="mt-6 space-y-5">
+          <div>
+            <label class="text-xs font-semibold block mb-1.5 text-[#475569]">YOUR NAME</label>
+            <input type="text" id="story-name" required class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="Jordan Ellis">
+          </div>
+          
+          <div>
+            <label class="text-xs font-semibold block mb-1.5 text-[#475569]">EMAIL ADDRESS</label>
+            <input type="email" id="story-email" required class="form-input w-full rounded-2xl px-4 py-3 text-sm" placeholder="jordan@email.com">
+          </div>
+          
+          <div>
+            <label class="text-xs font-semibold block mb-1.5 text-[#475569]">WHO OR WHAT ARE YOU PRESERVING?</label>
+            <select id="story-type" class="form-input w-full rounded-2xl px-4 py-3 text-sm">
+              <option value="parent">A parent or grandparent</option>
+              <option value="spouse">A spouse or partner</option>
+              <option value="self">My own life story / legacy</option>
+              <option value="pet">A beloved pet</option>
+              <option value="family">A broader family history project</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          
+          <div>
+            <label class="text-xs font-semibold block mb-1.5 text-[#475569]">WHAT DO YOU HAVE READY RIGHT NOW?</label>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <label class="cursor-pointer"><input type="checkbox" class="mr-1.5 accent-[#C9A227]"> Photos on my phone</label>
+              <label class="cursor-pointer"><input type="checkbox" class="mr-1.5 accent-[#C9A227]"> Scanned documents</label>
+              <label class="cursor-pointer"><input type="checkbox" class="mr-1.5 accent-[#C9A227]"> Voice recordings</label>
+              <label class="cursor-pointer"><input type="checkbox" class="mr-1.5 accent-[#C9A227]"> Nothing yet — just ideas</label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn-gold w-full py-3.5 rounded-2xl font-semibold mt-1">Create My Free Account &amp; Begin</button>
+          
+          <div class="text-center text-xs text-[#64748B]">You’ll receive a secure link to start uploading immediately. No card required.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- SAMPLE STORY MODAL (Interactive Provenance Demo) -->
+  <div id="sample-story-modal" onclick="if (event.target.id === 'sample-story-modal') hideSampleStoryModal()" class="hidden fixed inset-0 bg-black/90 z-[90] flex items-center justify-center p-4 lg:p-8">
+    <div onclick="event.stopImmediatePropagation()" class="w-full max-w-[1080px] rounded-3xl overflow-hidden modal bg-[#0F172A] text-white">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-white/10 px-7 py-4">
+        <div class="flex items-center gap-x-3">
+          <div>
+            <div class="font-semibold">Margaret Chen • 1937–2025</div>
+            <div class="text-xs text-[#C9A227]">Cinematic Legacy • 2:41 • 47 sources verified</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-x-3">
+          <div class="provenance-badge text-xs hidden sm:flex"><i class="fa-solid fa-link mr-1.5"></i> FULL PROVENANCE ACTIVE</div>
+          <button onclick="hideSampleStoryModal()" class="text-white/60 hover:text-white text-3xl leading-none px-2">×</button>
+        </div>
+      </div>
+      
+      <div class="grid lg:grid-cols-5">
+        
+        <!-- Video / Cinematic Area -->
+        <div class="lg:col-span-3 bg-black aspect-video lg:aspect-auto lg:h-[480px] relative flex items-center justify-center">
+          <div class="text-center px-8">
+            <div class="mx-auto w-20 h-20 border-4 border-[#C9A227]/60 rounded-full flex items-center justify-center mb-4">
+              <i class="fa-solid fa-play text-3xl text-[#C9A227] ml-1"></i>
+            </div>
+            <div class="text-white text-lg tracking-tight">Cinematic Legacy Video</div>
+            <div class="text-[#64748B] text-sm mt-1">Click to play (placeholder)</div>
+            
+            <div class="mt-8 text-xs uppercase tracking-widest text-[#C9A227]">NARRATED BY CONNIE • MUSIC BY ARBOR QUARTET</div>
+          </div>
+          
+          <div class="absolute bottom-5 left-5 text-xs px-3 py-1 bg-black/70 rounded text-white/70">0:47 / 2:41</div>
+        </div>
+        
+        <!-- Source Panel -->
+        <div class="lg:col-span-2 border-t lg:border-t-0 lg:border-l border-white/10 bg-[#020617] p-6 lg:p-7 overflow-y-auto max-h-[380px] lg:max-h-[480px]">
+          <div class="uppercase tracking-[1.5px] text-xs font-semibold text-[#C9A227] mb-3">PROVENANCE • 47 CITATIONS</div>
+          
+          <div class="space-y-3 text-sm">
+            <div class="source-item p-3.5 rounded-xl">
+              <div class="flex justify-between text-xs"><span class="font-medium">Photo • 1973</span><span class="text-emerald-400">VERIFIED</span></div>
+              <div class="text-xs text-[#94A3B8] mt-px">“Margaret and her mother outside the family store, San Francisco” — <span class="font-mono text-[10px]">IMG_1973_04_12.jpg</span></div>
+            </div>
+            
+            <div class="source-item p-3.5 rounded-xl">
+              <div class="flex justify-between text-xs"><span class="font-medium">Voice Note • Connie</span><span class="text-emerald-400">VERIFIED</span></div>
+              <div class="text-xs text-[#94A3B8] mt-px">Timestamp 14:22 — “She always said the store was her first love after us kids.”</div>
+            </div>
+            
+            <div class="source-item p-3.5 rounded-xl">
+              <div class="flex justify-between text-xs"><span class="font-medium">FamilySearch Record</span><span class="text-emerald-400">VERIFIED</span></div>
+              <div class="text-xs text-[#94A3B8] mt-px">Birth: 14 March 1937, San Francisco County — Record ID: 9K2P-4M7</div>
+            </div>
+            
+            <div class="source-item p-3.5 rounded-xl">
+              <div class="flex justify-between text-xs"><span class="font-medium">Obituary • SF Chronicle</span><span class="text-emerald-400">VERIFIED</span></div>
+              <div class="text-xs text-[#94A3B8] mt-px">Published Feb 12, 2025 — “Beloved matriarch and small business pioneer”</div>
+            </div>
+            
+            <div class="source-item p-3.5 rounded-xl">
+              <div class="flex justify-between text-xs"><span class="font-medium">Library of Congress Photo</span><span class="text-emerald-400">VERIFIED</span></div>
+              <div class="text-xs text-[#94A3B8] mt-px">Chinatown 1942, FSA Collection — LC-USF34-012345</div>
+            </div>
+          </div>
+          
+          <div class="mt-5 pt-5 border-t border-white/10 text-xs text-[#64748B]">
+            All sources hashed at ingestion. Full audit trail available to the family.
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white/5 px-7 py-4 text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-2 text-[#94A3B8]">
+        <div>Shared privately with 14 family members • Last updated Feb 18, 2026</div>
+        <div class="flex gap-x-5 text-[#C9A227]">
+          <button class="hover:underline">Download Full Report (PDF)</button>
+          <button class="hover:underline">View All 47 Sources</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Success Toast Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[100] hidden"></div>
+  
+  <!-- Scripts -->
+  <script>
+    // Tailwind script configuration
+    function initTailwind() {
+      document.documentElement.style.setProperty('--accent-gold', '#C9A227');
+    }
+    
+    // Mobile menu
+    function initMobileMenu() {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const icon = btn.querySelector('i');
+        if (menu.classList.contains('hidden')) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        }
+      });
+      
+      // Close on nav click
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          btn.querySelector('i').classList.remove('fa-times');
+          btn.querySelector('i').classList.add('fa-bars');
+        });
+      });
+    }
+    
+    // Navbar scroll effect
+    function initNavbar() {
+      const nav = document.getElementById('nav');
+      let lastScroll = 0;
+      
+      window.addEventListener('scroll', () => {
+        const current = window.scrollY;
+        if (current > 80) {
+          nav.style.boxShadow = '0 1px 0 0 #E2D9C8';
+        } else {
+          nav.style.boxShadow = 'none';
+        }
+        lastScroll = current;
+      });
+    }
+    
+    // Audience tabs
+    let currentTab = 0;
+    
+    function switchAudienceTab(index) {
+      // Update tabs
+      document.querySelectorAll('#audience-tabs button').forEach((btn, i) => {
+        if (i === index) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      
+      // Update panels
+      document.querySelectorAll('.audience-panel').forEach((panel, i) => {
+        if (parseInt(panel.dataset.panel) === index) {
+          panel.classList.remove('hidden');
+        } else {
+          panel.classList.add('hidden');
+        }
+      });
+      
+      currentTab = index;
+    }
+    
+    // Modals
+    function showVideoModal() {
+      document.getElementById('video-modal').classList.remove('hidden');
+      document.getElementById('video-modal').classList.add('flex');
+    }
+    
+    function hideVideoModal() {
+      const modal = document.getElementById('video-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    
+    function showDemoModal(audiencePref = null) {
+      const modal = document.getElementById('demo-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      
+      if (audiencePref) {
+        const select = document.getElementById('demo-audience');
+        if (audiencePref === 'funeral') select.value = 'funeral';
+        if (audiencePref === 'senior') select.value = 'senior';
+        if (audiencePref === 'genealogy') select.value = 'genealogy';
+        if (audiencePref === 'corporate') select.value = 'corporate';
+      }
+    }
+    
+    function hideDemoModal() {
+      const modal = document.getElementById('demo-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    
+    function showStartStoryModal(pet = false) {
+      const modal = document.getElementById('start-story-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      
+      if (pet) {
+        const select = document.getElementById('story-type');
+        select.value = 'pet';
+      }
+    }
+    
+    function hideStartStoryModal() {
+      const modal = document.getElementById('start-story-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    
+    function showSampleStoryModal() {
+      const modal = document.getElementById('sample-story-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    
+    function hideSampleStoryModal() {
+      const modal = document.getElementById('sample-story-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    
+    // Form submissions
+    function submitDemoForm(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('demo-form');
+      const originalHTML = form.innerHTML;
+      
+      form.innerHTML = `
+        <div class="py-8 text-center">
+          <div class="mx-auto w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-5">
+            <i class="fa-solid fa-check text-emerald-600 text-3xl"></i>
+          </div>
+          <div class="font-semibold text-xl tracking-tight">Thank you. Your request has been received.</div>
+          <p class="text-sm mt-3 text-[#475569]">A member of the Gemynd team will contact you within one business day to schedule your private demo.</p>
+          <button onclick="hideDemoModal()" class="mt-8 text-sm px-8 py-2.5 border border-[#E2D9C8] rounded-2xl hover:bg-[#FDF8F0]">Close</button>
+        </div>
+      `;
+      
+      // Track conversion (placeholder for real analytics)
+      console.log('%c[Analytics] Demo request submitted', 'color:#64748B');
+    }
+    
+    function submitStoryForm(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('story-form');
+      
+      form.innerHTML = `
+        <div class="py-7 text-center">
+          <div class="mx-auto w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-5">
+            <i class="fa-solid fa-check text-emerald-600 text-3xl"></i>
+          </div>
+          <div class="font-semibold text-xl tracking-tight">Welcome to Gemynd.</div>
+          <p class="text-sm mt-2.5 text-[#475569]">We’ve sent a secure magic link to your email. You can begin uploading memories immediately.</p>
+          
+          <div class="mt-8 bg-[#F8FAFC] p-4 rounded-2xl text-left text-sm">
+            <div class="font-semibold text-xs tracking-wider mb-2 text-[#64748B]">NEXT STEPS</div>
+            <ol class="space-y-1.5 text-[#334155]">
+              <li>1. Check your email for the link</li>
+              <li>2. Upload your first photos or documents</li>
+              <li>3. Record a 3-minute voice note with Connie (optional)</li>
+              <li>4. Receive your first grounded story in minutes</li>
+            </ol>
+          </div>
+          
+          <button onclick="hideStartStoryModal()" class="mt-6 btn-gold px-9 py-2.5 rounded-2xl text-sm font-semibold">Return to Homepage</button>
+        </div>
+      `;
+      
+      console.log('%c[Analytics] Family story start initiated', 'color:#64748B');
+    }
+    
+    // Toast helper
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      container.innerHTML = `
+        <div class="bg-[#0F172A] text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-x-3 text-sm">
+          <i class="fa-solid fa-check-circle text-[#C9A227]"></i>
+          <span>${message}</span>
+        </div>
+      `;
+      container.classList.remove('hidden');
+      
+      setTimeout(() => {
+        container.classList.add('hidden');
+      }, 3200);
+    }
+    
+    // Keyboard escape support
+    function initKeyboard() {
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.fixed').forEach(el => {
+            if (!el.classList.contains('hidden')) {
+              el.classList.add('hidden');
+              el.classList.remove('flex');
+            }
+          });
+        }
+        
+        // Quick demo shortcut (for internal use)
+        if (e.key.toLowerCase() === '?' && document.activeElement.tagName === 'BODY') {
+          e.preventDefault();
+          const demo = document.getElementById('demo-modal');
+          if (demo.classList.contains('hidden')) {
+            demo.classList.remove('hidden');
+            demo.classList.add('flex');
+          }
+        }
+      });
+    }
+    
+    // Subtle scroll reveal for cards
+    function initScrollReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      
+      document.querySelectorAll('.premium-card, .process-step').forEach(el => {
+        el.style.opacity = '0.96';
+        el.style.transform = 'translateY(6px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
+    }
+    
+    // Initialize everything
+    function initializeSite() {
+      initTailwind();
+      initMobileMenu();
+      initNavbar();
+      initKeyboard();
+      initScrollReveal();
+      
+      // Default open first audience tab
+      switchAudienceTab(0);
+      
+      // Optional: Show a subtle toast for NFDA context on first visit (disabled for production feel)
+      // setTimeout(() => { if (document.visibilityState === 'visible') showToast('NFDA 2026 pilot slots now open'); }, 12500);
+      
+      // Analytics ready hook
+      console.log('%c[Gemynd] Premium website initialized — production ready', 'color:#64748B; font-size:9px');
+      
+      window.GEMYND_SITE_READY = true;
+    }
+    
+    // Boot
+    document.addEventListener('DOMContentLoaded', initializeSite);
+    
+    // Expose helpful functions
+    window.Gemynd = {
+      showDemo: () => document.getElementById('demo-modal').classList.remove('hidden') || document.getElementById('demo-modal').classList.add('flex'),
+      showStory: () => document.getElementById('start-story-modal').classList.remove('hidden') || document.getElementById('start-story-modal').classList.add('flex'),
+      showSample: () => document.getElementById('sample-story-modal').classList.remove('hidden') || document.getElementById('sample-story-modal').classList.add('flex'),
+    };
+  </script>
+</body>
+</html>
