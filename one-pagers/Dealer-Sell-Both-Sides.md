@@ -1,1 +1,1 @@
-[Full dealer one-pager content]
+[Dealer one-pager content]

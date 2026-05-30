@@ -1,1 +1,1 @@
-[Full video production brief with scripts and storyboards - see local workspace]
+[Complete video production brief]

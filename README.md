@@ -1,41 +1,54 @@
-# Gemynd Brand System 2026 — Full Deliverables
+# Gemynd Brand System 2026 — Complete Deliverables
 
 **One Engine. Two Faces.**
 
-This is the complete working brand system for Gemynd (Grounded Memory Platform) + WestFlow (Cognitive Orchestration Layer).
+This repository contains the full brand system for Gemynd (Grounded Memory Platform) and WestFlow (The Cognitive Orchestration Layer).
 
-## Quick Start (Recommended)
+## ⚠️ Important: How to View Everything Properly
 
-**Easiest way to review everything:**
-1. Download the ZIP from the Releases section (or from the local working folder `Gemynd-Brand-System-2026.zip`)
-2. Unzip it
-3. Open `brand-guide/index.html` in a browser (beautiful interactive brand guide)
-4. Open `marketing-website/index.html` locally (full premium website)
-5. Review the slide deck: `deck/Gemynd-Strategy-2026.pptx`
+GitHub does not render large images well in the browser. 
 
-## Why the ZIP?
+**Recommended:**
+1. Download the ZIP: `Gemynd-Brand-System-2026.zip` (see Releases or local copy)
+2. Unzip and explore locally
 
-GitHub has limitations viewing large images directly in the browser. All high-quality visuals (infographics, storyboards, business cards, refined whiteboards) are included in the ZIP under `assets/visuals/`.
+All high-quality visuals, the full website, brand guide, and slide deck are inside the ZIP.
 
-## Repository Structure
+## Repository Contents
 
-- `brand-system/` — Complete dual-identity brand guidelines
-- `marketing-website/` — High-end Gemynd/StoryScribe marketing site
-- `deck/` — Professional strategy slide deck
-- `one-pagers/` — Dealer/partner materials
-- `video-concepts/` — Video scripts + storyboards
-- `assets/visuals/` — All premium generated assets
+- `brand-system/` — Official dual-identity brand guidelines + interactive guide
+- `marketing-website/` — Premium Gemynd/StoryScribe marketing site
+- `deck/` — Professional strategy slide deck (Gemynd-Strategy-2026.pptx)
+- `one-pagers/` — Dealer and partner materials
+- `video-concepts/` — Video scripts, production brief, and storyboards
+- `assets/visuals/` — All generated infographics, business cards, storyboards, and refined whiteboards
 
-## Key Strategy
+## Quick Links (Local Review)
 
-- **WestFlow** = The technical platform/engine
-- **Gemynd** = The emotional memory/legacy layer (StoryScribe flagship)
+- Brand Guide: `brand-system/brand-guide/index.html`
+- Marketing Site: `marketing-website/index.html`
+- Slide Deck: `deck/Gemynd-Strategy-2026.pptx`
+- Dealer One-Pager: `one-pagers/Dealer-Sell-Both-Sides.md`
+
+## Strategy Summary
+
+- **WestFlow** = Platform / engine for technical, document-heavy use cases
+- **Gemynd** = Emotional memory & legacy layer (StoryScribe flagship)
 - Shared provenance technology
-- Copier channel overlap is a major advantage
+- Copier/SMB channel overlap is a major advantage
 
-## Contact
-Dan Western | westerns1978
+## Creating a Release with the ZIP (Recommended for Distribution)
+
+1. Go to Releases → "Create a new release"
+2. Tag: `v2026-sprint-1` or similar
+3. Title: "Gemynd Brand System 2026 – Initial Sprint"
+4. Upload the `Gemynd-Brand-System-2026.zip` file
+5. Publish
+
+This gives people one clean downloadable package with all assets.
 
 ---
+
+Contact: Dan Western | westerns1978
 
 *Preserving what matters. Grounded in truth. Powered by AI.*
